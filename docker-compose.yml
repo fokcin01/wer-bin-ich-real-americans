@@ -1,0 +1,7 @@
+services:
+  fragebogen:
+    build: .
+    container_name: wer-bin-ich
+    restart: unless-stopped
+    ports:
+      - "8080:80"

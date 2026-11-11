@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eee7de">
+  <meta name="description" content="Ein philosophischer Fragebogen über Identität, Herkunft, Erwartungen und Zugehörigkeit – inspiriert von Rachel Khongs Roman Real Americans.">
+  <title>Wer bin ich eigentlich? · Real Americans</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <script src="js/questions.js" defer></script>
+  <script src="js/app.js?v=2" defer></script>
+</head>
+<body>
+  <div class="ambient-art" aria-hidden="true"></div>
+  <div class="ambient-color" aria-hidden="true"></div>
+  <div class="texture" aria-hidden="true"></div>
+
+  <main class="stage" id="stage">
+    <header class="masthead">
+      <div class="wordmark" aria-label="Real Americans – ein Gedankenexperiment">
+        <span class="wordmark__symbol" aria-hidden="true">✳</span>
+        <span class="wordmark__name">REAL <strong>AMERICANS</strong></span>
+      </div>
+      <div class="masthead__note">Ein Gedankenexperiment <span aria-hidden="true">/</span> Rachel Khong</div>
+    </header>
+
+    <div class="layout">
+      <aside class="picture-side" aria-label="Illustration und Leitgedanke">
+        <div class="artwork">
+          <img
+            src="assets/cover.png"
+            alt="Buntstiftzeichnung eines Jungen auf einem verwüsteten Feld, mit Teddybär, Gebäuderuinen, Bergen und Hubschraubern im Hintergrund."
+            width="447" height="447" fetchpriority="high">
+          <div class="artwork__border" aria-hidden="true"></div>
+        </div>
+        <div class="picture-side__footnote">
+          <span class="tiny-star" aria-hidden="true">✳</span>
+          <p>Zwischen dem, was wir sind, und dem, was andere in uns sehen.</p>
+        </div>
+      </aside>
+
+      <div class="paper-card" id="paperCard">
+        <section class="intro" id="introScreen" aria-labelledby="introTitle">
+          <div class="eyebrow"><span class="eyebrow__line"></span> Identität · Zugehörigkeit · Leben</div>
+          <p class="intro__kicker">Eine kleine Frage mit großer Wirkung</p>
+          <h1 class="display-title" id="introTitle">Wer bin ich <em>eigentlich?</em></h1>
+          <p class="intro__description">Zehn Fragen über Herkunft, Erfolg, Erwartungen und das Gefühl, irgendwo dazuzugehören. Inspiriert von <cite>Real Americans</cite> von Rachel Khong.</p>
+          <div class="intro__notice">
+            <span class="notice__icon" aria-hidden="true">✳</span>
+            <p>Es gibt keine richtigen oder falschen Antworten. Manche sind ernst, andere etwas ungewöhnlich. Entscheide so, wie du wirklich denkst.</p>
+          </div>
+          <div class="intro__bottom">
+            <button class="primary-button" id="startButton" type="button">
+              Fragebogen beginnen <span aria-hidden="true">↗</span>
+            </button>
+            <span class="muted-detail">10 Fragen <span aria-hidden="true">·</span> kein Ergebnis</span>
+          </div>
+        </section>
+
+        <section class="quiz" id="quizScreen" aria-labelledby="questionText" hidden>
+          <div class="quiz__progress-block">
+            <div class="quiz__progress-labels">
+              <span id="chapterLabel">I. Identität</span>
+              <span id="questionCounter" class="numeric">01 / 10</span>
+            </div>
+            <div class="progress-track" id="progressBar" role="progressbar" aria-label="Fortschritt des Fragebogens" aria-valuemin="0" aria-valuemax="10" aria-valuenow="1">
+              <div class="progress-track__fill" id="progressFill"></div>
+            </div>
+          </div>
+
+          <div class="quiz__body" id="quizBody">
+            <p class="question-caption" id="questionTheme">Wer bin ich?</p>
+            <h2 class="question-title" id="questionText"></h2>
+            <div class="answer-list" role="group" aria-label="Antwortmöglichkeiten" id="answerList"></div>
+          </div>
+
+          <div class="quiz__footer">
+            <p class="quiz__hint" id="answerHint">Wähle die Antwort, die dir am nächsten kommt.</p>
+            <button class="primary-button primary-button--next" id="nextButton" type="button" hidden>
+              Weiter <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <footer class="page-footer" id="pageFooter">
+      <span>Frei denken. Ehrlich antworten.</span>
+      <span>Deine Antworten werden nicht gespeichert.</span>
+    </footer>
+  </main>
+
+  <!-- Das Finale enthält bewusst weder Buttons noch Links oder ein Eingabefeld. -->
+  <section class="finale" id="finale" aria-labelledby="finalTitle" hidden>
+    <div class="finale__art" aria-hidden="true"></div>
+    <div class="finale__wash" aria-hidden="true"></div>
+    <div class="finale__content" id="finaleContent">
+      <div class="finale__eyebrow"><span aria-hidden="true">✳</span> Eine letzte Gegenfrage</div>
+      <p class="finale__intro">Wir verbringen einen großen Teil unseres Lebens damit, Erwartungen zu erfüllen, Anerkennung zu suchen und irgendwo dazuzugehören.</p>
+      <p class="finale__subintro">Doch wenn unsere Lebenszeit begrenzt ist und wir am Ende selbst mit unseren Entscheidungen leben müssen:</p>
+      <p class="finale__reflection">Warum sollten wir uns so sehr darum kümmern, was andere über uns denken?</p>
+      <p class="finale__reflection">Ist es wirklich notwendig, sich einer Gesellschaft anzupassen, deren Werte und Vorstellungen möglicherweise gar nicht unsere eigenen sind?</p>
+      <div class="finale__separator" aria-hidden="true"></div>
+      <p class="finale__foreword">Und vor allem …</p>
+      <h2 class="finale__question" id="finalTitle" tabindex="-1">Lebst du für dich selbst – <em>oder für jemand anderen?</em></h2>
+      <!-- Neustart erfolgt bewusst über die Aktualisierungsfunktion des Browsers. -->
+      <p class="finale__restart-hint">
+        Möchtest du noch einmal über deine Antworten nachdenken?
+        <br>
+        Lade diese Seite neu, um den Fragebogen erneut zu starten.
+      </p>
+    </div>
+  </section>
+
+  <noscript>
+    <div class="noscript-message">Für diesen Fragebogen muss JavaScript in deinem Browser aktiviert sein.</div>
+  </noscript>
+</body>
+</html>
