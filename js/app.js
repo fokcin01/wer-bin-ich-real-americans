@@ -1,7 +1,4 @@
-/*
- * Fragebogen ohne Framework, Backend, Cookies oder Tracking.
- * Die Auswahl bleibt ausschließlich während der aktuellen Seite im Arbeitsspeicher.
- */
+
 (() => {
   "use strict";
 
@@ -128,15 +125,13 @@
 
   function showFinale() {
     phase = "finale";
-
-    // Auch alle bisher sichtbaren Schaltflächen sind jetzt aus dem Fokusbaum entfernt.
+    
     stage.hidden = true;
     finale.hidden = false;
     document.body.classList.add("finale-active");
     window.scrollTo({ top: 0, behavior: "instant" });
     finalTitle.focus({ preventScroll: true });
 
-    // Die letzte Gegenfrage bleibt stehen, bis die Seite neu geladen wird.
   }
 
   startButton.addEventListener("click", beginQuiz);
